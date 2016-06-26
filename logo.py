@@ -21,11 +21,11 @@ mask_inv = cv2.bitwise_not(mask)
 img1_bg = cv2.bitwise_and(roi,roi,mask = mask_inv)
 
 # Take only region of logo from logo image.
-#img2_fg = cv2.bitwise_and(img2,img2,mask = mask)
+img2_fg = cv2.bitwise_and(img2,img2,mask = mask)
 
-#dst = cv2.add(img1_bg,img2_fg)
-#img1[0:rows, 0:cols ] = dst
+dst = cv2.add(img1_bg,img2_fg)
+img1[0:rows, 0:cols ] = dst
 
-cv2.imshow('res',img1_bg)
+cv2.imshow('res',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
